@@ -1,16 +1,13 @@
 version: 2.1
 
 orbs:
-  # Use specific version
-  # see. https://github.com/sue445/circleci-ruby-orbs/releases
   ruby-orbs: sue445/ruby-orbs@1.3.0
 
 # .circleci/config.yml
 jobs:
-  rspec:
+  bundle-install-test:
     docker:
-      - image: circleci/ruby
-
+      - image: circleci/ruby:2.5
     steps:
       - checkout
       - ruby-orbs/bundle-install
